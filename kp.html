@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Коммерческое предложение — АвтоТехнология</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0c0c10;
+    color: #c4c4cf;
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+
+  /* Header */
+  .kp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #ff5c00;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .kp-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .kp-logo span { color: #ff5c00; }
+
+  .kp-rekvizity {
+    text-align: right;
+    font-size: 0.78rem;
+    color: #8a8a9a;
+    line-height: 1.6;
+  }
+
+  .kp-rekvizity a { color: #ff5c00; text-decoration: none; }
+
+  /* Title */
+  .kp-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .kp-subtitle {
+    font-size: 1.1rem;
+    color: #ff5c00;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  /* Sections */
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 32px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #ff5c00;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 20px 0 8px;
+  }
+
+  p { margin-bottom: 12px; }
+
+  .highlight {
+    background: rgba(255,92,0,0.08);
+    border: 1px solid rgba(255,92,0,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .highlight strong { color: #ff5c00; }
+
+  /* Lists */
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+
+  li { margin-bottom: 6px; }
+  li strong { color: #fff; }
+
+  /* Services grid */
+  .services-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .service-block {
+    background: #16161d;
+    border: 1px solid #2a2a36;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .service-block h3 {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .service-block ul { font-size: 0.85rem; }
+
+  /* Price table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.88rem;
+  }
+
+  th {
+    background: #ff5c00;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  th:first-child { border-radius: 8px 0 0 0; }
+  th:last-child { border-radius: 0 8px 0 0; }
+
+  td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #2a2a36;
+  }
+
+  tr:nth-child(even) td { background: #16161d; }
+  tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+  tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+
+  .price-val { color: #ff5c00; font-weight: 700; }
+
+  /* LKM table */
+  .lkm-table td:last-child { text-align: center; font-weight: 600; color: #fff; }
+
+  /* Goals */
+  .goal-card {
+    background: #16161d;
+    border: 1px solid #2a2a36;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+
+  .goal-card .num {
+    display: inline-flex;
+    width: 28px; height: 28px;
+    background: #ff5c00;
+    color: #fff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85rem;
+    margin-right: 10px;
+  }
+
+  .goal-card h3 { display: inline; margin: 0; }
+
+  /* Discounts */
+  .discount-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .discount-card {
+    background: linear-gradient(135deg, rgba(255,92,0,0.12), rgba(255,92,0,0.04));
+    border: 1px solid rgba(255,92,0,0.25);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .discount-card .pct {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff5c00;
+  }
+
+  .discount-card .role {
+    font-size: 0.85rem;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* Guarantee */
+  .guarantee {
+    background: rgba(34,197,94,0.08);
+    border: 1px solid rgba(34,197,94,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .guarantee strong { color: #22c55e; }
+
+  /* Footer */
+  .kp-footer {
+    border-top: 2px solid #ff5c00;
+    padding-top: 24px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .kp-footer .contact-line {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .kp-footer a { color: #ff5c00; text-decoration: none; }
+
+  .kp-footer .sign {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #8a8a9a;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; color: #333; }
+    .page { padding: 20px; }
+    .kp-header { border-color: #ff5c00; }
+    h2 { color: #333; }
+    h3 { color: #333; }
+    .kp-logo { color: #333; }
+    .service-block { background: #f5f5f5; border-color: #ddd; }
+    th { background: #ff5c00; }
+    td { border-color: #ddd; }
+    tr:nth-child(even) td { background: #f9f9f9; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="kp-header">
+    <div>
+      <div class="kp-logo">Авто<span>Технология</span></div>
+      <div style="color:#8a8a9a; font-size:0.82rem; margin-top:4px;">Автотехцентр · Сыктывкар</div>
+    </div>
+    <div class="kp-rekvizity">
+      ИП Вавилова Т.В.<br>
+      ОГРНИП 325110000017303<br>
+      ИНН 110117108904<br>
+      167004, Республика Коми,<br>
+      г. Сыктывкар, Сысольское ш., 3/7<br>
+      тел. <a href="tel:+79042000290">+7 (904) 200-02-90</a>
+    </div>
+  </div>
+
+  <div class="kp-title">КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</div>
+  <div class="kp-subtitle">Сотрудничество по ремонту и обслуживанию автотранспорта</div>
+
+  <p>Автотехцентр «АвтоТехнология» предлагает Вам сотрудничество, результатом которого будет <strong style="color:#fff">значительное снижение расходов</strong> на ремонт и постгарантийное обслуживание Ваших автомобилей.</p>
+
+  <div class="highlight">
+    <strong>Обслуживаем:</strong> легковые автомобили российских и зарубежных марок, внедорожники, кроссоверы, микроавтобусы, среднетоннажный (коммерческий) транспорт, грузовики (высотой до 3,1 м), а также длиннобазные модели.
+  </div>
+
+  <h2>Цели сотрудничества</h2>
+
+  <div class="goal-card">
+    <span class="num">1</span>
+    <h3>Уменьшить себестоимость ремонта</h3>
+    <p style="margin-top:8px;">Мы предлагаем низкий нормо-час на ремонт — <strong style="color:#ff5c00">от 800 руб. н/ч</strong>.</p>
+  </div>
+
+  <div class="goal-card">
+    <span class="num">2</span>
+    <h3>Сократить сроки ремонта</h3>
+    <p style="margin-top:8px;">Все работы проводятся в одном месте: ТО, кузовной и слесарный ремонт, ремонт двигателя и электрики, обслуживание/заправка климатических систем, ремонт по направлениям от страховых компаний.</p>
+  </div>
+
+  <div class="goal-card">
+    <span class="num">3</span>
+    <h3>Повысить качество ремонта</h3>
+    <p style="margin-top:8px;">Для Вашей организации будет разработан индивидуальный график ремонта и обслуживания автомобилей. На кузовной ремонт предоставляется гарантия.</p>
+  </div>
+
+  <h2>Почему выгодно ремонтировать у нас?</h2>
+
+  <ul>
+    <li><strong>Удобное расположение</strong> — центр города, просторная охраняемая стоянка</li>
+    <li><strong>7/0</strong> — работаем без выходных</li>
+    <li><strong>Опыт более 10 лет</strong> в данной отрасли</li>
+    <li><strong>Честные цены</strong> — не переплачиваете за спецтехнику и авто премиум-сегмента</li>
+    <li><strong>Прямой доступ</strong> ко всем оптовым центральным складам запчастей</li>
+    <li><strong>Без очередей</strong> — мелкий и средний ремонт в день обращения</li>
+    <li><strong>Полный фото-видео отчёт</strong> обо всех стадиях ремонта (по желанию)</li>
+  </ul>
+
+  <h2>Основные виды услуг</h2>
+
+  <div class="services-two-col">
+    <div class="service-block">
+      <h3>🔧 Слесарный участок</h3>
+      <ul>
+        <li>Плановое ТО</li>
+        <li>Замена масла в двигателе, трансмиссии</li>
+        <li>Капремонт двигателей, МКПП</li>
+        <li>Ремонт тормозной системы</li>
+        <li>Ремонт топливной аппаратуры</li>
+        <li>Ремонт генераторов, стартеров, рулевых реек</li>
+        <li>Компьютерная диагностика</li>
+        <li>Диагностика и ремонт электрооборудования</li>
+        <li>Установка доп. оборудования</li>
+        <li>Ремонт и заправка кондиционеров</li>
+        <li>Сход-развал 3D с отчётом</li>
+      </ul>
+    </div>
+    <div class="service-block">
+      <h3>🎨 Малярно-кузовной участок</h3>
+      <ul>
+        <li>Кузовной ремонт любой сложности</li>
+        <li>Удаление вмятин без покраски</li>
+        <li>Замена лобовых стёкол</li>
+        <li>Ремонт бамперов</li>
+        <li>Сварка аргоном</li>
+        <li>Покраска в камере</li>
+        <li>Подбор цвета</li>
+        <li>Полировка кузова</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Стоимость нормо-часа</h2>
+
+  <table>
+    <tr>
+      <th>Класс автомобиля</th>
+      <th>Слесарные работы</th>
+      <th>Кузов и покраска</th>
+    </tr>
+    <tr>
+      <td>Легковые авто всех марок</td>
+      <td class="price-val">800 — 1 000 ₽</td>
+      <td class="price-val">800 — 1 000 ₽</td>
+    </tr>
+    <tr>
+      <td>Микроавтобусы, джипы, кроссоверы, коммерческий транспорт</td>
+      <td class="price-val">1 200 — 1 800 ₽</td>
+      <td class="price-val">1 400 — 1 800 ₽</td>
+    </tr>
+    <tr>
+      <td>Грузовые авто</td>
+      <td class="price-val">2 000 ₽</td>
+      <td class="price-val">1 800 ₽</td>
+    </tr>
+  </table>
+
+  <h2>Стоимость ЛКМ на один элемент</h2>
+
+  <table class="lkm-table">
+    <tr>
+      <th>Тип ЛКМ</th>
+      <th>Стоимость, ₽</th>
+    </tr>
+    <tr><td>Акрил</td><td>2 300</td></tr>
+    <tr><td>Металлик</td><td>2 500</td></tr>
+    <tr><td>Перламутр</td><td>3 000</td></tr>
+    <tr><td>Подбор колера</td><td>600</td></tr>
+  </table>
+
+  <table class="lkm-table" style="margin-top:12px;">
+    <tr>
+      <th>Коэффициент площади детали</th>
+      <th>Коэф.</th>
+    </tr>
+    <tr><td>Крыша (большая площадь)</td><td>1,9</td></tr>
+    <tr><td>Капот, панель боковины (больше средней)</td><td>1,5</td></tr>
+    <tr><td>Рамка радиатора, лонжерон, стойки, пороги (меньше средней)</td><td>0,7</td></tr>
+    <tr><td>Зеркало, молдинги (малая площадь)</td><td>0,3</td></tr>
+  </table>
+
+  <h2>Дополнительные способы экономии</h2>
+
+  <div class="goal-card">
+    <span class="num">1</span>
+    <h3>Экономия на неоригинальных запчастях</h3>
+    <p style="margin-top:8px;">По согласованию с заказчиком используем неоригинальные запчасти от проверенных производителей. <strong style="color:#ff5c00">Сумма счёта сокращается вдвое.</strong></p>
+  </div>
+
+  <div class="goal-card">
+    <span class="num">2</span>
+    <h3>Экономия на ремонте дорогостоящих деталей</h3>
+    <p style="margin-top:8px;">Имея все виды сварочных аппаратов, надёжно восстанавливаем разрывы и трещины креплений двигателя, КПП и подвесного оборудования. Избегаете покупки дорогих агрегатов и простоя.</p>
+  </div>
+
+  <div class="goal-card">
+    <span class="num">3</span>
+    <h3>Экономия на кузовном ремонте — до 50%</h3>
+    <p style="margin-top:8px;">Восстанавливаем редкие и дорогие детали кузова, включая алюминиевые. Основная сумма кузовного ремонта на 70% состоит из запчастей — восстанавливая детали, мы сокращаем счёт вдвое.</p>
+  </div>
+
+  <div class="guarantee">
+    <strong>Гарантия:</strong> кузовные работы — 1 год, покрасочные работы — 1 год, слесарные работы — 30 дней.
+  </div>
+
+  <h2>Скидки для сотрудников Вашей организации</h2>
+  <p>На ремонт <strong style="color:#fff">личного транспорта</strong> всех сотрудников Вашей организации:</p>
+
+  <div class="discount-grid">
+    <div class="discount-card">
+      <div class="pct">20%</div>
+      <div class="role">Директору</div>
+    </div>
+    <div class="discount-card">
+      <div class="pct">15%</div>
+      <div class="role">Руководящему составу</div>
+    </div>
+    <div class="discount-card">
+      <div class="pct">10%</div>
+      <div class="role">Сотрудникам</div>
+    </div>
+  </div>
+
+  <div class="kp-footer">
+    <div class="contact-line">Приём и выдача автомобилей — без выходных с 09:00 до 18:00</div>
+    <p>
+      тел. <a href="tel:+79042000290">+7 (904) 200-02-90</a> ·
+      e-mail: <a href="mailto:89042000290@mail.ru">89042000290@mail.ru</a> ·
+      <a href="https://vk.com/autot11">vk.com/autot11</a>
+    </p>
+    <p style="margin-top:8px;">167004, Республика Коми, г. Сыктывкар, Сысольское ш., 3/7</p>
+
+    <div class="sign">
+      <p>Мы очень надеемся, что наше предложение заинтересовало Вас, и уверены, что работая с Автотехцентром «АвтоТехнология», Вы сразу почувствуете экономию бюджета.</p>
+      <p style="margin-top:12px;">С уважением,<br><strong style="color:#fff">ИП Вавилова Т.В.</strong><br>Автотехцентр «АвтоТехнология»</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
