@@ -248,6 +248,22 @@
     color: #8a8a9a;
   }
 
+  /* Download button */
+  .dl-btn {
+    display: inline-block;
+    background: #ff5c00;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .dl-btn:hover { background: #e55200; }
+
+  @media print { .dl-btn { display: none; } }
+
   /* Print */
   @media print {
     body { background: #fff; color: #333; }
@@ -283,6 +299,10 @@
 
   <div class="kp-title">КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</div>
   <div class="kp-subtitle">Сотрудничество по ремонту и обслуживанию автотранспорта</div>
+
+  <div style="margin-bottom:24px;">
+    <a href="https://vladivk40004-dev.github.io/autotech-videos/kp.docx" download class="dl-btn">Скачать в Word</a>
+  </div>
 
   <p>Автотехцентр «АвтоТехнология» предлагает Вам сотрудничество, результатом которого будет <strong style="color:#fff">значительное снижение расходов</strong> на ремонт и постгарантийное обслуживание Ваших автомобилей.</p>
 
@@ -462,6 +482,10 @@
       <a href="https://vk.com/autot11">vk.com/autot11</a>
     </p>
     <p style="margin-top:8px;">167004, Республика Коми, г. Сыктывкар, ул. Станционная, 78, 2 этаж (приёмка)</p>
+
+    <div style="margin:24px 0;">
+      <a href="https://vladivk40004-dev.github.io/autotech-videos/kp.docx" download class="dl-btn">Скачать в Word</a>
+    </div>
 
     <div class="sign">
       <p>Мы очень надеемся, что наше предложение заинтересовало Вас, и уверены, что работая с Автотехцентром «АвтоТехнология», Вы сразу почувствуете экономию бюджета.</p>
